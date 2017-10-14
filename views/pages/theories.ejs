@@ -1,0 +1,27 @@
+<div class="jumbotron text-center">
+	<h1>All Theories</h1>
+</div>
+
+<table class="table table-bordered table-hover table-striped">
+	<thead>
+		<tr>
+			<th>Theory Name</th>
+			<th>Description</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		
+		<% for (var theory of theories) { %>
+			<tr>
+				<td><%= theory.name %></td>
+				<td><%= theory.description %></td>
+				<td>
+					<a href="/theories/<%= theory.slug %>" class="btn btn-sm btn-primary">View</a>
+				</td>
+			</tr>
+
+		<% } %>
+
+	</tbody>
+</table>
