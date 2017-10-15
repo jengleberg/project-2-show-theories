@@ -13,12 +13,18 @@ module.exports = router;
 router.get('/', mainController.showHome);
 
 // theory route
-router.get('/theories',    theoriesController.showTheories);
-router.get('/theories/:slug', theoriesController.showSingle); 
+router.get('/theories', theoriesController.showTheories);
+
+
+// seed theories
+router.get('/theories/seed', theoriesController.seedTheories);
 
 // create theories
 // edit theories
 // delete theories
+
+//show a single theory
+router.get('/theories/:id', theoriesController.showSingle); 
 
 
 
