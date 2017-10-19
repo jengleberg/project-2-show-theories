@@ -1,5 +1,5 @@
 // load environment variables
-require('dotenv').config();
+//require('dotenv').config();
 
 // grab our dependencies
 const express = require('express');
@@ -17,16 +17,11 @@ app.set('view engine', 'ejs');
 app.use(expressLayouts);
 
 // connect to our database
-mongoose.connect( process.env.MONGODB_URI || "mongodb://localhost/show-theories" );
+mongoose.connect( process.env.MONGODB_URI || "mongodb://localhost/show_theories" );
                   
-
-
-
-
 
 // set the routes ==========================
 app.use(require('./app/routes'));
-
 
 
 // start our server ========================

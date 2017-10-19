@@ -6,7 +6,7 @@
 	<thead>
 		<tr>
 			<th>Theory Name</th>
-			<th>Description</th>
+			<th>Theory Description</th>
 			<th></th>
 		</tr>
 	</thead>
@@ -14,10 +14,10 @@
 		
 		<% for (var theory of theories) { %>
 			<tr>
-				<td><%= theory.name %></td>
+				<td><%= theory.title %></td>
 				<td><%= theory.description %></td>
 				<td>
-					<a href="/theories/<%= theory.slug %>" class="btn btn-sm btn-primary">View</a>
+					<a href="/theories/<%= theory._id %>" class="btn btn-sm btn-primary">View Comments</a>
 				</td>
 			</tr>
 
