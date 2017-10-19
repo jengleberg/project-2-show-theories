@@ -56,6 +56,4 @@ app.use(passport.session()); // used for persistent login sessions
 app.use(require('./app/routes'));
 
 // start our server ========================
-app.listen(8080, function() {
-	console.log('Listening on port 8080');
-});
+app.listen(port);
