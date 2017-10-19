@@ -11,10 +11,11 @@
 		</tr>
 	</thead>
 	<tbody>
-		
-		<% for (var theory of theories) { %>
+		<!-- grabbing each theory and displaying the title and description.-->
+		<!-- the bootstrap button is a link to see that theories comments. -->
+		<% for (var theory of theories) { %> 
 			<tr>
-				<td><%= theory.title %></td>
+				<td><%= theory.title %></td> 
 				<td><%= theory.description %></td>
 				<td>
 					<a href="/theories/<%= theory._id %>" class="btn btn-sm btn-primary">View Comments</a>

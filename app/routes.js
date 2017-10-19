@@ -23,8 +23,8 @@ router.get('/theories/seed', theoriesController.seedTheories);
 
 
 // create theories
-router.get('/theories/create', theoriesController.showCreate); //
-router.post('/theories/create', theoriesController.processCreate);
+router.get('/theories/create', theoriesController.showCreate); // routes us and shows our created theory.  
+router.post('/theories/create', theoriesController.processCreate); // routes us and creates the theory in the db.  
 // edit theories
 // delete theories
 

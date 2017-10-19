@@ -7,6 +7,7 @@ const express = require('express');
 	port = process.env.PORT || 8080;
 	expressLayouts = require('express-ejs-layouts');
 	mongoose = require('mongoose');
+	bodyParser = require('body-parser');
 
 // configure our application ==================
 // tell express where to look for static assets
@@ -18,11 +19,13 @@ app.use(expressLayouts);
 
 // connect to our database
 mongoose.connect( process.env.MONGODB_URI || "mongodb://localhost/show_theories" );
-                  
+
+// use body parser to grab the data entered into the create theory form.
+app.use(bodyParser.urlencoded({ extended: true}));
+
 
 // set the routes ==========================
 app.use(require('./app/routes'));
-
 
 // start our server ========================
 app.listen(8080, function() {

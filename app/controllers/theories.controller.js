@@ -5,7 +5,9 @@ const Theory = require('../models/theory');
 module.exports = {
 	showTheories: showTheories,
 	showSingle: showSingle,
-	seedTheories: seedTheories
+	seedTheories: seedTheories,
+	showCreate: showCreate,
+	processCreate: processCreate
 };
 
 	//show all theories
@@ -58,5 +60,26 @@ module.exports = {
 		res.send('Database seeded!');
 	}
 
+	// Show the create form
+	function showCreate(req, res) {
+		res.render('pages/create');
+	}
+
+	// process the creation form
+	function processCreate(req, res) {
+		// create a new Theory
+		const theory = new Theory({
+			title: req.body.title,
+			description: req.body.description
+		});
+
+		theory.save( function(err) {
+			if (err)
+				res.send("Checkout the theories.controller create function");
+
+			// redirect to the newly created theory. SHOW PAGE????
+			res.redirect('/theories/${theories._id:}');
+		});
+	}
 
 
