@@ -4,22 +4,35 @@ const express = require('express'),
 	router = express.Router();
 	mainController = require('./controllers/main.controller');
 	theoriesController = require('./controllers/theories.controller');
+	usersController = require('./controllers/users.controller');
 
 	//Shows Controller???
 
 // export router
 module.exports = router;
 
+
+
 // define routes
-// main routes
+
+// main route
 router.get('/', mainController.showHome);
+
+// ===============================
+// SIGNUP, LOGIN and LOGOUT ROUTES
+// ===============================
+
+router.get('/login', )
+
+// ===============================
+// THEORY ROUTES =================
+// ===============================
 
 // theory route
 router.get('/theories', theoriesController.showTheories); // This might need to be changed to be the shows route. As I should display the shows first.
 
 // seed theories
 router.get('/theories/seed', theoriesController.seedTheories);
-
 
 // create theories
 router.get('/theories/create', theoriesController.showCreate); // routes us to the create theory form.  
