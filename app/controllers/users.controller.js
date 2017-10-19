@@ -5,9 +5,9 @@ var passport = require('passport');
 // POST /signup
 
 // GET /login
-function getLogin(req, res) {
-	res.render('pages/login', {message: req.flash('loginMessage')});
-}
+//function getLogin(req, res) {
+	//res.render('pages/login', {message: req.flash('loginMessage')});
+//}
 
 // POST /login
 //function postLogin(request, response, next) {
@@ -24,11 +24,11 @@ function getLogin(req, res) {
 
 // Restricted page????
 
-module.exports = {
-  getLogin: getLogin,
+//module.exports = {
+ // getLogin: getLogin,
   //postLogin: postLogin ,
   //getSignup: getSignup,
   //postSignup: postSignup,
   //getLogout: getLogout,
   //secret: secret
-};
+//};

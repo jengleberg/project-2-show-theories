@@ -22,7 +22,12 @@ router.get('/', mainController.showHome);
 // SIGNUP, LOGIN and LOGOUT ROUTES
 // ===============================
 
-router.get('/login', )
+//login routes
+//router.get('/login', usersController.getLogin);
+//router.post('/login', usersController.postLogin);
+
+// signup routes
+
 
 // ===============================
 // THEORY ROUTES =================
