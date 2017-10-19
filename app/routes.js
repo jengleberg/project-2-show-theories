@@ -28,9 +28,9 @@ router.post('/theories/create', theoriesController.processCreate); // posts the 
 // edit theories
 router.get('/theories/:id/edit', theoriesController.showEdit);
 router.post('/theories/:id', theoriesController.processEdit);
+
 // delete theories
-
-
+router.get('/theories/:id/delete', theoriesController.deleteTheory);
 
 //show a single theory
 router.get('/theories/:id', theoriesController.showSingle);  // This might need to be changed to be a shows route???

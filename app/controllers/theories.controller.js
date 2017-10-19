@@ -9,7 +9,8 @@ module.exports = {
 	showCreate: showCreate,
 	processCreate: processCreate,
 	showEdit: showEdit,
-	processEdit: processEdit
+	processEdit: processEdit,
+	deleteTheory: deleteTheory
 };
 
 	//show all theories
@@ -23,7 +24,10 @@ module.exports = {
 			}
 		
 		// return a view with data
-		res.render('pages/theories', { theories: theories });
+		res.render('pages/theories', { 
+			theories: theories,
+			success: req.flash('success')
+			 });
 	   });
 	}
 	
@@ -146,4 +150,14 @@ module.exports = {
 		});
 	});
 }
+
+	// delete a theory
+	function deleteTheory(req, res) {
+		Theory.remove({_id: req.params.id}, function(err) {
+			// set flash data
+			// redirect to the theories page
+			req.flash('success', "Theory Deleted");
+			res.redirect('/theories');
+		});
+	}
 
