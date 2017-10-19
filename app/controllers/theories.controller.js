@@ -105,9 +105,14 @@ module.exports = {
 		});
 	}
 
-	//show the edit page
+	//show the edit form
 	function showEdit(req, res) {
-		res.render('pages/edit');
+		Theory.findOne({ _id: req.params.id }, function (err, theory) {
+			res.render('pages/edit', {
+				theory: theory,
+				errors: req.flash('errors')
+			});
+		});
 	}
 
 	// process the edit form
@@ -122,11 +127,23 @@ module.exports = {
 			return res.redirect('/theories/${req.params.id}/edit');
 		}
 
+
 		//finding a current theory
+		Theory.findOne({ _id: req.params.id }, function(err, theory) {
+			//updating that event
+			theory.title = req.body.title;
+			theory.description = req.body.description;
 
-		//updating that event
+			theory.save(function(err) {
+				if (err) {
+					return console.log("save error: " + err);
+				}
+				// flash message
+				req.flash('success', "Successfully updated theory.");
+				// redirect the user back tot he theories page
+				res.redirect('/theories');
 
-		//redirect
-	}
-
+		});
+	});
+}
 
