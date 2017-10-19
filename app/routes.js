@@ -23,10 +23,19 @@ router.get('/', mainController.showHome);
 // ===============================
 
 //login routes
-//router.get('/login', usersController.getLogin);
-//router.post('/login', usersController.postLogin);
+router.get('/login', usersController.getLogin);
+router.post('/login', usersController.postLogin);
 
 // signup routes
+//router.get('/signup', usersController.getSignup);
+//router.post('/signup', usersController.postSignup);
+
+// secret route
+//router.get('/secret', authenticatedUser, usersController.secret);
+
+// logout route
+//router.get('/logout', usersController.getLogout);
+
 
 
 // ===============================
