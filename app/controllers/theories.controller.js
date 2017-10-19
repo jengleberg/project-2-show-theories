@@ -7,7 +7,9 @@ module.exports = {
 	showSingle: showSingle,
 	seedTheories: seedTheories,
 	showCreate: showCreate,
-	processCreate: processCreate
+	processCreate: processCreate,
+	showEdit: showEdit,
+	processEdit: processEdit
 };
 
 	//show all theories
@@ -33,8 +35,11 @@ module.exports = {
 				res.status(404);
 				res.send('Something is wrong, look at the theories.controller.');
 			}
-
-			res.render('pages/single', {theory: theory }); //This is being rendered to the ejs file.  Change to be Shows?
+			//This is being rendered to the ejs file.  Change to be Shows?
+			res.render('pages/single', {
+			theory: theory, 
+			success: req.flash('success')
+			}); 
 		});
 	}
 
@@ -62,24 +67,66 @@ module.exports = {
 
 	// Show the create form
 	function showCreate(req, res) {
-		res.render('pages/create');
+		res.render('pages/create', {
+			errors: req.flash('errors')
+		});
 	}
 
 	// process the creation form
 	function processCreate(req, res) {
+		// validate information being submitted
+		req.checkBody('title', 'Title is required.' ).notEmpty();
+		req.checkBody('description', 'Description is required.').notEmpty();
+
+		// if errors, redirect and save errors to flash
+		const errors = req.validationErrors();
+		if (errors) {
+			req.flash('errors', errors.map(err => err.msg));
+			return res.redirect('/theories/create');
+		}
+
 		// create a new Theory
-		const theory = new Theory({
+		const newTheory = new Theory({
 			title: req.body.title,
-			description: req.body.description
+			description: req.body.description,
 		});
 
-		theory.save( function(err) {
-			if (err)
-				res.send("Checkout the theories.controller create function");
+		// save theory to db
+		newTheory.save(function(err) {
+			if (err) {
+				return console.log("save error: " + err);
+			}
+
+			//set a successful flash message
+			req.flash('success', "successfully created theory!");
 
 			// redirect to the newly created theory. SHOW PAGE????
-			res.redirect('/theories/${theories._id:}');
+			res.redirect('back');
 		});
+	}
+
+	//show the edit page
+	function showEdit(req, res) {
+		res.render('pages/edit');
+	}
+
+	// process the edit form
+	function processEdit(req, res) {
+		req.checkBody('title', 'Title is required.' ).notEmpty();
+		req.checkBody('description', 'Description is required.').notEmpty();
+
+		// if errors, redirect and save errors to flash
+		const errors = req.validationErrors();
+		if (errors) {
+			req.flash('errors', errors.map(err => err.msg));
+			return res.redirect('/theories/${req.params.id}/edit');
+		}
+
+		//finding a current theory
+
+		//updating that event
+
+		//redirect
 	}
 
 
