@@ -8,15 +8,17 @@ function getSignup(request, response, next) {
 // POST /signup
 function postSignup(request, response, next) {
 	let signupStrategy = passport.authenticate('local-signup', {
-		successRedirect: '/',
+		successRedirect: '/theories',
 		failureRedirect: '/signup',
 		failureFlash: true
 	});
+
+	return signupStrategy(request, response, next);
 }
 
 //GET /login
 function getLogin(request, response) {
-	response.render('login', {message: request.flash('loginMessage')});
+	response.render('pages/login', {message: request.flash('loginMessage')});
 }
 
 // POST /login

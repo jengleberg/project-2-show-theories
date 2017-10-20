@@ -6,6 +6,14 @@ const express = require('express'),
 	theoriesController = require('./controllers/theories.controller');
 	usersController = require('./controllers/users.controller');
 
+function authenticatedUser(req, res, next) {
+	//If the user is authenticated, then we continue the execution
+	if (req.isAuthenticated()) return next();
+
+	// Otherwise the request is always redirected to the home page
+    res.redirect('/');
+  }
+
 	//Shows Controller???
 
 // export router
@@ -27,14 +35,14 @@ router.get('/login', usersController.getLogin);
 router.post('/login', usersController.postLogin);
 
 // signup routes
-//router.get('/signup', usersController.getSignup);
-//router.post('/signup', usersController.postSignup);
+router.get('/signup', usersController.getSignup);
+router.post('/signup', usersController.postSignup);
 
 // secret route
 //router.get('/secret', authenticatedUser, usersController.secret);
 
 // logout route
-//router.get('/logout', usersController.getLogout);
+router.get('/logout', usersController.getLogout);
 
 
 

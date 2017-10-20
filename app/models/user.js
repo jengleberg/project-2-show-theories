@@ -8,12 +8,15 @@ var User = mongoose.Schema({
 	}
 });
 
+// Methods to use the bcrypt npm ===========================
+// generating a hash and salting it 8 times.
 User.methods.encrypt = function(password) {
-	return becrypt.hashSync(password, bcrypt.genSaltSync(8));
+	return bcrypt.hashSync(password, bcrypt.genSaltSync(8));
 };
 
-User.method.validPassword = function(password) {
-	return becrypt.compareSync(password, this.local.password);
+// checking if password is valid.  
+User.methods.validPassword = function(password) {
+	return bcrypt.compareSync(password, this.local.password);
 };
 
 

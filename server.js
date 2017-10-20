@@ -2,19 +2,19 @@
 require('dotenv').config();
  	
 // grab our dependencies
-const express = require('express');
-	app = express();
-	port = process.env.PORT || 8080;
-	expressLayouts = require('express-ejs-layouts');
-	mongoose = require('mongoose');
-	bodyParser = require('body-parser');
-	session = require('express-session');
-	cookieParser = require('cookie-parser');
-	flash = require('connect-flash');
-	expressValidator = require('express-validator');
-	passport = require('passport');
-	passportLocal = require('passport-local');
-	bcrypt = require('bcrypt');
+var express = require('express');
+var	app = express();
+var	port = process.env.PORT || 8080;
+var	expressLayouts = require('express-ejs-layouts');
+var	mongoose = require('mongoose');
+var	bodyParser = require('body-parser');
+var	session = require('express-session');
+var	cookieParser = require('cookie-parser');
+var	flash = require('connect-flash');
+var	expressValidator = require('express-validator');
+var	morgan = require('morgan');
+var passport = require('passport');
+
 
 // configure our application ==================
 //set sessions in cookie parser
@@ -43,13 +43,19 @@ app.use(bodyParser.urlencoded({ extended: true}));
 app.use(expressValidator());
 
 // require passport
-//require('./config/passport')(passport);
+require('./config/passport')(passport);
+
+app.use(function(req, res, next) {
+	res.locals.currentUser = req.user;
+	next();
+});
 
 // required for passport
 app.use(session({ secret: 'SHOW-THEORIES' })); // session secret
 app.use(passport.initialize()); // initializes passport module
 app.use(passport.session()); // used for persistent login sessions
 
+app.use(morgan('dev')); 
 
 
 // set the routes ==========================
