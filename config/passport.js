@@ -56,13 +56,14 @@ passport.use('local-login', new LocalStrategy({
 		passwordField : 'password',
 		passReqToCallback : true
 	}, function(req, email, password, callback){
+		// Search for a user with this email
 		User.findOne({'local.email': email}, function(err, user) {
 			if (err) return callback(err);
-			//No user found
+			// If no user found
 			if (!user) {
 				return callback(null, false, req.flash('loginMessage', "Username does not exist"));
 			}
-			//Wrong password
+			//If wrong password
 			if(!user.validPassword(password)) {
 				return callback(null, false, req.flash('loginMessage', "Wrong Password"));
 			}
