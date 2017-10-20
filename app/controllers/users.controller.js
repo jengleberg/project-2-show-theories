@@ -2,7 +2,7 @@ var passport = require('passport');
 
 // GET /signup
 function getSignup(request, response, next) {
-	response.render('signup', {message : request.flash('signupMessage')});
+	response.render('pages/signup', {message : request.flash('signupMessage')});
 }
 
 // POST /signup
@@ -16,7 +16,7 @@ function postSignup(request, response, next) {
 
 //GET /login
 function getLogin(request, response) {
-	res.render('pages/login', {message: req.flash('loginMessage')});
+	response.render('login', {message: request.flash('loginMessage')});
 }
 
 // POST /login
