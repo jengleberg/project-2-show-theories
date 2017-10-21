@@ -19,12 +19,7 @@ var passport = require('passport');
 // configure our application ==================
 //set sessions in cookie parser
 app.use(cookieParser());
-//app.use(session({
-	//secret: process.env.SECRET,
-	//cookie: {maxAge: 60000},
-	//resave: false, // forces the session to be saved back to the store
-	//saveUninitialized: false // don't save unmodified
-//}));
+
 app.use(flash()); // used to display flash messages stored in session
 
 // tell express where to look for static assets

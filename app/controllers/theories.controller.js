@@ -134,7 +134,7 @@ module.exports = {
 
 		//finding a current theory
 		Theory.findOne({ _id: req.params.id }, function(err, theory) {
-			//updating that event
+			//updating that theory
 			theory.title = req.body.title;
 			theory.description = req.body.description;
 
