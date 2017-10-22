@@ -1,7 +1,7 @@
 module.exports = {
 
 	showHome: function(req, res)  {
-	res.render('pages/home');
+	res.render('pages/login');
 	}
 
 };

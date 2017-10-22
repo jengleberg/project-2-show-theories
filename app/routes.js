@@ -40,7 +40,7 @@ router.get('/signup', usersController.getSignup);
 router.post('/signup', usersController.postSignup);
 
 // secret route
-//router.get('/secret', authenticatedUser, usersController.secret);
+router.get('/secret', authenticatedUser, usersController.secret);
 
 // logout route
 router.get('/logout', usersController.getLogout);
@@ -53,7 +53,7 @@ router.get('/logout', usersController.getLogout);
 router.get('/shows', showsController.popularShows);
 
 // single shows route / taking over the singles theory page for now.
-router.get('/single', showsController. showDetail);
+router.get('/single', showsController. getShow);
 
 // ===============================
 // THEORY ROUTES =================

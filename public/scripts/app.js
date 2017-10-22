@@ -1,70 +1,91 @@
 $(function () {
 
-	// Only runs this function if on the discover-shows route
-	if (top.location.pathname === '/shows') {
-		// Pull the discover movies api and make it into an object
-		$.get('https://www.episodate.com/api/most-popular?page=1').done(function(data) {
-			let showsList = data.results;
-			let showImage = " ";
+// Loads the list of TV Shows into our album
 
-			// Iterate through the results array and display the results on the page.
-			for (let i = 0; i < showsList.length; i++); {
-				let showId = showsList[i].id;
-				if (showList[i].image_thumbnail_path !==null) {
-				// Creates images and takes path from results to create the src
-				$('.show-list').append(('<a href="/single?id=' + showId + '">'+'<img src="' + showImage + showsList[i].image_thumbnail_path + '">' + '</a>'));
-			}
-			// Gives the imgs a bootstrap class to display four in a row.
-			$("img").addClass('col-md-3').attr('id', 'shows-album');
-		}
-		});
+  //   get the popular shows from the api url
+    $.get('https://api.themoviedb.org/3/discover/tv?api_key=6c9ee9c307b42ea4d152062ce4a5e1eb&language=en-US&sort_by=popularity.desc').done(function(data) {
+      let showList = data.results; // This is the results from the api query. making it a variable called showList
+      let showPoster = "https://image.tmdb.org/t/p/w370_and_h556_bestv2"; // Leading URL for the image
 
-	// Prevents enter key from refreshing page
-	$('#search-bar').submit(function() {
-		event.preventDefault();
-	});
+    //   Iterate through the results array and display the results on the page.
+      for (let i = 0; i < showList.length; i++) {
+        let showId = showList[i].id;
+        if (showList[i].poster_path !==null) {
+     //    Creates images and takes path from results to create the src
+        $('.showsAlbum').append(('<a href="/single?id=' + showId + '">'+'<img src="' + showPoster + showList[i].poster_path + '">' + '</a>'));
+      }
+    //   Gives the imgs a bootstrap class to display four in a row.
+      $("img").addClass('col-md-3').attr('id', 'api-entertainment');
+    }
+    });
 
-	// Calls api to search when search form is submitted
-	$('#search-bar-btn').on('click', function() {
-		event.preventDefault();
-		let searchQuery = $('#search-bar').val();
-		// Make the get request for shows or movies depening on the search query
-		$.get('https://www.episodate.com/api/search?q=' + searchQuery).done(function(data) {
-			console.log(data);
-			$('.shows-list').empty();
-			let showList = data.results;
-			let showImage = "https://static.episodate.com/images/tv-show/thumbnail/35624.jpg";
+  // Prevents enter key from refreshing page
+  $('#search-bar').submit(function() {
+    event.preventDefault();
+  });
 
-			// Iterate through the results array and display the results on the page.
-			for (let i = 0; i < showList.length; i++) {
-				let showId = showList[i].id;
-				// Creates images and takes path from results to create the src
-				if (showList[i].title !== undefined && showList[i].image_thumbnail_path !==null) {
-				$('.shows-list').append(('<a href="/single?id=' + showId + '">'+'<img src="' + showImage + showList[i].image_thumbnail_path + '">' + '</a>'));
-				// Gives the imgs a bootstrap class to display four in a row.
-				$("img").addClass('col-md-3').attr('id', 'shows-album');
-				}
-			}
-		});
-		//clear the search form
-		$('#search-var').val('');
-	});
+  // Calls api to search when search form is submitted
+  $('#search-bar-btn').on('click', function() {
+    event.preventDefault();
+    let searchQuery = $('#search-bar').val();
+    // Make the get request for shows or movies depening on the search query
+    $.get('https://api.themoviedb.org/3/search/tv?api_key=6c9ee9c307b42ea4d152062ce4a5e1eb&language=en-US&query=' + searchQuery).done(function(data) {
+      console.log(data);
+      $('.showsAlbum').empty();
+      let showList = data.results;
+      let showPoster = "https://image.tmdb.org/t/p/w370_and_h556_bestv2";
 
-	
+      // Iterate through the results array and display the results on the page.
+      for (let i = 0; i < showList.length; i++) {
+        let showId = showList[i].id;
+        // Creates images and takes path from results to create the src
+        if (showList[i].title !== undefined && showList[i].poster_path !==null) {
+        $('.showsAlbum').append(('<a href="/single?id=' + showId + '">'+'<img src="' + showPoster + showList[i].poster_path + '">' + '</a>'));
+        // Gives the imgs a bootstrap class to display four in a row.
+        $("img").addClass('col-md-3').attr('id', 'api-entertainment');
+        }
+      }
+    });
+    //clear the search form
+    $('#search-var').val('');
+  });
 
-		
-		
+  
 
-	}
-});
+    // Change populated movies based on genre dropdown
+    $('#genre-btn-movies').on('click', function() {
+      event.preventDefault();
+      let genreId = $('.genres-form option:selected').val();
+      // Make the get request for the movies depending on the genre
+      $.get('https://api.themoviedb.org/3/genre/' + genreId + '/movies?api_key=6c9ee9c307b42ea4d152062ce4a5e1eb&language=en-US&include_adult=false&sort_by=created_at.asc').done(function(data) {
+        $('.showsAlbum').empty();
+        let showList = data.results;
+        let showPoster = "https://image.tmdb.org/t/p/w370_and_h556_bestv2";
+
+        // Iterate through the results array and display the results on the page.
+        for (let i = 0; i < showList.length; i++) {
+          let showId = showList[i].id;
+          if (showList[i].poster_path !==null) {
+        // Creates images and takes path from results to create the src
+        $('.showsAlbum').append(('<a href="/single?id=' + showId + '">'+'<img src="' + showPoster + showList[i].poster_path + '">' + '</a>'));
+      }
+      // Gives the imgs a bootstrap class to display four in a row.
+      $("img").addClass('col-md-3').attr('id', 'api-entertainment');
+    }
+      });
+    });
+  
+
+
+
 
 ////////////////////////////////
-// Media Profile Page Section //
+// Show Profile Page Section //
 ////////////////////////////////
 
 $('#queue-btn').on('click', function() {
-	$('.added').empty();
-	$('.added').append('<p>' + 'Successfully Added');
-
+  $('.added').empty();
+  $('.added').append('<p>' + 'Successfully Added');
+});
 
 });
