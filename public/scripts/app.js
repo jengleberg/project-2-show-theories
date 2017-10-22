@@ -4,15 +4,15 @@ $(function () {
 	if (top.location.pathname === '/shows') {
 		// Pull the discover movies api and make it into an object
 		$.get('https://www.episodate.com/api/most-popular?page=1').done(function(data) {
-			let showList = data.results;
-			let showImage = "https://static.episodate.com/images/tv-show/thumbnail/35624.jpg";
+			let showsList = data.results;
+			let showImage = " ";
 
 			// Iterate through the results array and display the results on the page.
-			for (let i = 0; i < showList.length; i++); {
-				let showId = showList[i].id;
+			for (let i = 0; i < showsList.length; i++); {
+				let showId = showsList[i].id;
 				if (showList[i].image_thumbnail_path !==null) {
 				// Creates images and takes path from results to create the src
-				$('.show-list').append(('<a href="/single?id=' + showId + '">'+'<img src="' + showImage + showList[i].image_thumbnail_path + '">' + '</a>'));
+				$('.show-list').append(('<a href="/single?id=' + showId + '">'+'<img src="' + showImage + showsList[i].image_thumbnail_path + '">' + '</a>'));
 			}
 			// Gives the imgs a bootstrap class to display four in a row.
 			$("img").addClass('col-md-3').attr('id', 'shows-album');
