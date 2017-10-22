@@ -52,6 +52,9 @@ router.get('/logout', usersController.getLogout);
 // shows route / popular shows page 1 for now
 router.get('/shows', showsController.popularShows);
 
+// single shows route / taking over the singles theory page for now.
+router.get('/single', showsController. showDetail);
+
 // ===============================
 // THEORY ROUTES =================
 // ===============================

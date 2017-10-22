@@ -1,28 +1,29 @@
+var Show = require('../models/shows');
+const axios = require('axios');
 const request = require('request');
 
-//requiring our shows Model and giving it a constant to use in the controller functions below
-const Show = require('../models/shows');
 
-
-
-
-
-function popularShows(req, response) {
-	//console.log('Name: ${req.body.name}');
-	let options = {
-		url: "https://www.episodate.com/api/most-popular?page=1",
-	};
-	request(options, function(err, res, body) {
-		if (err) console.log("ERROR: " + err);
-		let shows = JSON.parse(body);
-		let name = shows.name;
-		console.log(req.body);
-		response.render('pages/shows', {shows});
-
-	});
-
+function popularShows(req, res, next) {
+	res.render('pages/shows', req.user);
 }
-module.exports = {popularShows: popularShows};
+
+// Movie profile controller
+function showDetail(req, res, next) {
+	let showId = req.query;
+	axios.get('https://www.episodate.com/api/search?q=&id=' + mediaId.id)
+	.then(function(response) {	
+	res.render('single', {response});
+	});
+}
 
 
-	
+
+
+
+
+
+
+module.exports = {
+	popularShows: popularShows,
+	showDetail: showDetail,
+};

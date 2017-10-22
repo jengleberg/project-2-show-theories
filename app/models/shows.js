@@ -2,11 +2,12 @@ const mongoose = require('mongoose'),
 	Schema = mongoose.Schema;
 
 const Show = new Schema ({
+	id: String,
 	name: String,
 	permalink: String,
 	description: String,
 	network: String,
-	image_path: String
+	image_thumbnail_path: String
 });
 
 
