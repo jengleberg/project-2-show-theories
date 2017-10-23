@@ -1,3 +1,4 @@
+// Requiring passport module
 var passport = require('passport');
 
 // GET /signup

@@ -1,8 +1,9 @@
+// Requiring the mongoose module and creating the mongoose schema
 const mongoose = require('mongoose'),
 	Schema = mongoose.Schema;
 
 // create schemas
-// schema for each individual theory comment.
+// schema for each individual theory show.
 const showSchema = new Schema({
 show: String
 });

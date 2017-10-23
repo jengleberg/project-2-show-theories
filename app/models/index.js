@@ -4,7 +4,6 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/show_theories")
 
 
 module.exports.Theory = require("./theory.js");
-module.exports.Shows = require("./shows.js");
 module.exports.User = require("/user.js");
 
 
