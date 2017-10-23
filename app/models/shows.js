@@ -4,10 +4,6 @@ const mongoose = require('mongoose'),
 const Show = new Schema ({
 	id: String,
 	name: String,
-	permalink: String,
-	description: String,
-	network: String,
-	image_thumbnail_path: String
 });
 
 

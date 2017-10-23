@@ -105,7 +105,7 @@ module.exports = {
 			req.flash('success', "successfully created theory!");
 
 			// redirect to the newly created theory. SHOW PAGE????
-			res.redirect('back');
+			res.redirect('/theories');
 		});
 	}
 

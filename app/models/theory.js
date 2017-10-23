@@ -11,7 +11,7 @@ comment: String
 const  theorySchema = new Schema({
 	title: String,
 	description: String,
-	comments: [commentSchema]
+	
 });
 
 // create model

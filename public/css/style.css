@@ -26,3 +26,13 @@ body {
 	color: #999;
 }
 
+
+
+@media (min-width: 960px) {
+	#shows .col-md-3 .well {
+		height: 30em;
+	}
+	#shows .col-md-3 img {
+		height: 20em;
+	}
+}

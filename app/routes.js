@@ -12,10 +12,8 @@ function authenticatedUser(req, res, next) {
 	if (req.isAuthenticated()) return next();
 
 	// Otherwise the request is always redirected to the home page
-    res.redirect('/');
+    res.redirect('/shows');
   }
-
-	//Shows Controller???
 
 // export router
 module.exports = router;
@@ -59,7 +57,7 @@ router.get('/single', showsController. getShow);
 // ===============================
 
 // theory route
-router.get('/theories', theoriesController.showTheories); // This might need to be changed to be the shows route. As I should display the shows first.
+router.get('/theories', theoriesController.showTheories); // 
 
 // seed theories
 router.get('/theories/seed', theoriesController.seedTheories);
@@ -69,11 +67,11 @@ router.get('/theories/create', theoriesController.showCreate); // routes us to t
 router.post('/theories/create', theoriesController.processCreate); // posts the new theory to the DB.  
 
 // edit theories
-router.get('/theories/:id/edit', theoriesController.showEdit);
-router.post('/theories/:id', theoriesController.processEdit);
+router.get('/theories/:id/edit', theoriesController.showEdit); // routes us to the edit theory form
+router.post('/theories/:id', theoriesController.processEdit); // posts the edited Theory to the DB
 
 // delete theories
-router.get('/theories/:id/delete', theoriesController.deleteTheory);
+router.get('/theories/:id/delete', theoriesController.deleteTheory); // route to delete the Theory
 
 //show a single theory
 router.get('/theories/:id', theoriesController.showSingle);  // This might need to be changed to be a shows route???

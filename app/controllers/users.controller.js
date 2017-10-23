@@ -35,7 +35,7 @@ function postLogin(request, response, next) {
 // GET / logout
 function getLogout(request, response, next) {
 	request.logout();
-	response.redirect('/');
+	response.redirect('/login');
 }
 
 // Restricted page
