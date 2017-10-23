@@ -18,16 +18,13 @@ Express
 ```
 # Clone this repository
 $ git clone https://github.com/jengleberg/project-2-show-theories.git
-```
 
 # Go into the repository
 $ cd project-2-show-theories
 
-```
 # Install Dependencies
 $ npm install
-```
-```
+
 # Run the app
 $ nodemon server.js
 ```
