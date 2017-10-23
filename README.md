@@ -12,6 +12,33 @@ I started the project by creating wireframes of my vision for the site:
 <a href="https://imgur.com/4ZcwHGx"><img src="https://i.imgur.com/4ZcwHGx.png" title="source: imgur.com" /></a>
 <a href="https://imgur.com/rJ5BwKP"><img src="https://i.imgur.com/rJ5BwKP.png" title="source: imgur.com" /></a>
 
+### User Stories
+
+I then created some user stories for the app experience.  What needs to be included in the app in order for it to function and meet the project requirements.  A few stretch goals are pending.
+
+[User Stories](https://trello.com/b/BFp5ozy8/project-2-show-theories)
+
+### Workflow
+
+- App Foundation of server.js, Routes and Controllers
+- EJS File Templating (ongoing throughout project)
+- Created Show Route for Theories in server.js
+- Created Single Theory Show Routes in server.js
+- Installed MongoDB
+- Setup Mongoose Model for Theories
+- Seeded my DB with fake Theories nd verified with Robo 3T
+- Refactored the Controllers and Routes and modulized them
+- Built the create theory route and controller
+- Added Flash Success Messages to the Theories upon create
+- Built the Edit Theory routes and controllers
+- Built the Delete Theory routes and controllers
+- Built the Shows routes and controllers
+- Added passport and bcrypt for the user authentication
+- Built Signup, Login and Logout routes and controllers
+- Added app.js file to get the theories from the API
+- Setup EJS template for the shows and single show
+- Combined Theories and Shows (Work in Progress)
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See how to use for notes on how to deploy the project on a live system.
