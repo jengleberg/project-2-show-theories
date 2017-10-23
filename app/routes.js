@@ -5,7 +5,7 @@ const express = require('express'),
 	mainController = require('./controllers/main.controller');
 	theoriesController = require('./controllers/theories.controller');
 	usersController = require('./controllers/users.controller');
-	showsController = require('./controllers/shows.controller');
+	//showsController = require('./controllers/shows.controller');
 
 function authenticatedUser(req, res, next) {
 	//If the user is authenticated, then we continue the execution
@@ -47,10 +47,10 @@ router.get('/logout', usersController.getLogout);
 // ===============================
 
 // shows route / popular shows page 1 for now
-router.get('/shows', showsController.popularShows);
+router.get('/shows', theoriesController.popularShows);
 
 // single shows route / taking over the singles theory page for now.
-router.get('/single', showsController. getShow);
+router.get('/single', theoriesController. getShow);
 
 // ===============================
 // THEORY ROUTES =================
