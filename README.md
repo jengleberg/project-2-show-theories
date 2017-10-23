@@ -9,8 +9,8 @@ Show Theories is a site that pulls in Popular TV shows from an API and also allo
 ### Wire Frames
 
 I started the project by creating wireframes of my vision for the site:
-[First Page](https://i.imgur.com/4ZcwHGx.png)
-[Show Page](https://i.imgur.com/rJ5BwKP.png)
+<a href="https://imgur.com/4ZcwHGx"><img src="https://i.imgur.com/4ZcwHGx.png" title="source: imgur.com" /></a>
+<a href="https://imgur.com/rJ5BwKP"><img src="https://i.imgur.com/rJ5BwKP.png" title="source: imgur.com" /></a>
 
 ## Getting Started
 
