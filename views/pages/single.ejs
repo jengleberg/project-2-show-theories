@@ -1,11 +1,12 @@
 
-      <!-- Page Content -->
+      
     <div class="container content">
+      
 
-      <!-- Portfolio Item Heading -->
+     
       <h1 class="my-4"><%= response.data.name  %></h1>
 
-      <!-- Portfolio Item Row -->
+      
       <div class="row">
           <div class="col-md-4">
             <img src="https://image.tmdb.org/t/p/w370_and_h556_bestv2<%= response.data.poster_path %>" class="thumbnail">
@@ -22,7 +23,7 @@
             <h3>Plot</h3>
             <%= response.data.overview %>
             <hr>
-            <a href="http://imdb.com/title/${show.imdb_id}" target="_blank" class="btn btn-primary">View IMDB</a>
+            
             <a href="/shows" class="btn btn-default">Go Back To Search</a>
           </div>
         </div>

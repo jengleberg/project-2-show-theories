@@ -21,7 +21,6 @@ function authenticatedUser(req, res, next) {
 module.exports = router;
 
 
-
 // define routes
 
 // main route
