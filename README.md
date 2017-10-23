@@ -1,16 +1,25 @@
 # Show Theories
 
-This Show Theories site pulls in Popular TV shows from an API and also allows the user to search for shows from the API.  Users can see the show details and add "theories" to their favorite shows to share with friends and other users.  
+This project is my first Full Stack App!  This was a very challenging, yet rewarding project and I increased my knowledge significantly.
+
+Show Theories is a site that pulls in Popular TV shows from an API and also allows the user to search for shows from the API.  Users can see the show details and add "theories" to their favorite shows to share with friends and other users.  
+
+## Approach Taken
+
+### Wire Frames
+
+I started the project by creating wireframes of my vision for the site:
+[First Page](https://i.imgur.com/4ZcwHGx.png)
+[Show Page](https://i.imgur.com/rJ5BwKP.png)
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See how to use for notes on how to deploy the project on a live system.
 
 ### Prerequisites
 
 ```
 MongoDB
-Express
 ```
 
 ### How To Use
