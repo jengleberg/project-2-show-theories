@@ -74,5 +74,5 @@ router.post('/theories/:id', theoriesController.processEdit); // posts the edite
 router.get('/theories/:id/delete', theoriesController.deleteTheory); // route to delete the Theory
 
 //show a single theory
-router.get('/theories/:id', theoriesController.showSingle);  // This might need to be changed to be a shows route???
+//router.get('/theories/:id', theoriesController.showSingle);  // This might need to be changed to be a shows route???
 

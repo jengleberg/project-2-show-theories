@@ -4,7 +4,7 @@ const Theory = require('../models/theory');
 //exporting our controller functions to be used in theory routes
 module.exports = {
 	showTheories: showTheories,
-	showSingle: showSingle,
+//	showSingle: showSingle,
 	seedTheories: seedTheories,
 	showCreate: showCreate,
 	processCreate: processCreate,
@@ -32,20 +32,20 @@ module.exports = {
 	}
 	
 	// show a single theory
-		function showSingle(req, res) {
+//		function showSingle(req, res) {
 		// get a single theory
-		Theory.findOne({_id: req.params.id}, function(err,theory) {
-			if (err) {
-				res.status(404);
-				res.send('Something is wrong, look at the theories.controller.');
-			}
+//		Theory.findOne({_id: req.params.id}, function(err,theory) {
+//			if (err) {
+//				res.status(404);
+//				res.send('Something is wrong, look at the theories.controller.');
+//			}
 			//This is being rendered to the ejs file.  Change to be Shows?
-			res.render('pages/single', {
-			theory: theory, 
-			success: req.flash('success')
-			}); 
-		});
-	}
+//			res.render('pages/single', {
+//			theory: theory, 
+//			success: req.flash('success')
+//			}); 
+//		});
+//	}
 
 	// seed our database
 		function seedTheories(req, res) {

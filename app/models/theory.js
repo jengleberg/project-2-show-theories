@@ -3,14 +3,15 @@ const mongoose = require('mongoose'),
 
 // create schemas
 // schema for each individual theory comment.
-const commentSchema = new Schema({
-comment: String
+const showSchema = new Schema({
+show: String
 });
 
 // schema for each theory.
 const  theorySchema = new Schema({
 	title: String,
 	description: String,
+	show: [showSchema]
 	
 });
 

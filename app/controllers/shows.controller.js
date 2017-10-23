@@ -1,4 +1,4 @@
-var Show = require('../models/shows');
+var Theory = require('../models/theory');
 const axios = require('axios');
 const request = require('request');
 
