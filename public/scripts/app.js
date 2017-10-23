@@ -42,3 +42,7 @@ let showPoster = "https://image.tmdb.org/t/p/w370_and_h556_bestv2";
     $('#search-bar').val('');
 
   });
+
+function goBack() {
+    window.history.back();
+}
