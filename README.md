@@ -31,38 +31,36 @@ $ nodemon server.js
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
+Mocha / Chai testings can be performed by going into the app directory of the repo and running mocha from the terminal.
 
-### Break down into end to end tests
-
-Explain what these tests test and why
+### Test example for creation of new theory
 
 ```
-Give an example
+describe("Theory", function() {
+ describe("new", function() {
+  it("initializes a new theory", function() {
+      var theoryish = new Theory();
+
+    });
+});
+       
+    });
 ```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-MongoDB 
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [Node.js](https://nodejs.org/en/)
+* [Bootstrap](http://getbootstrap.com/) 
+* [MongoDB](https://www.mongodb.com/)
+* [Mongoose](https://www.npmjs.com/package/mongoose)
+* Javascript
+* JQUERY
+
  
 
 ## Authors
 
-* **Jeff Engleberg** - *Initial work* - [jengleberg](https://github.com/jengleberg)
+* **Jeff Engleberg** - [My GitHub](https://github.com/jengleberg)
 
 
 ## Acknowledgments
