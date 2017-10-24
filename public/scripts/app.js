@@ -48,3 +48,11 @@ let showPoster = "https://image.tmdb.org/t/p/w370_and_h556_bestv2";
 function goBack() {
     window.history.back();
 }
+
+function createTheory() {
+var baseUrl = (window.location).href; // You can also use document.URL
+var koopId = baseUrl.substring(baseUrl.lastIndexOf('=') + 1);
+alert(koopId);
+}
+
+
