@@ -55,7 +55,7 @@ app.use(morgan('dev'));
 
 
 // set the routes ==========================
-app.use(require('./app/routes'));
+app.use(require('./config/routes'));
 
 // start our server ========================
 app.listen(port);

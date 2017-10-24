@@ -2,9 +2,9 @@
 
 const 	express = require('express'),
 		router = express.Router();
-		mainController = require('./controllers/main.controller');
-		theoriesController = require('./controllers/theories.controller');
-		usersController = require('./controllers/users.controller');
+		mainController = require('../app/controllers/main.controller');
+		theoriesController = require('../app/controllers/theories.controller');
+		usersController = require('../app/controllers/users.controller');
 
 // Authentication function		
 
