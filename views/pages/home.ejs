@@ -9,7 +9,13 @@
 
         <p>Login or Register with:</p>
 
-        <a href="/login" class="btn btn-default"><span class="fa fa-user"></span> Local Login</a>
-        <a href="/signup" class="btn btn-default"><span class="fa fa-user"></span> Local Signup</a>
+ <% if (currentUser) {%>
+    <li><a href="/logout">Logout <%= currentUser.local.email %></a></li>
+  <% } else { %>
+    <li><a href="/login">Login</a></li>
+    <li><a href="/signup">Signup</a></li> 
+  <% } %>
+  	<li><a href="/secret">Secret page</a></li>
+</ul>
 
 </div>

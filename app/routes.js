@@ -12,7 +12,7 @@ function authenticatedUser(req, res, next) {
 	//If the user is authenticated, then we continue the execution
 	if (req.isAuthenticated()) return next();
 	// Otherwise the request is always redirected to the home page
-    res.redirect('/shows');
+    res.redirect('/');
 }
 
 // export our router to the server where it is required
@@ -29,19 +29,20 @@ router.get('/', mainController.showHome);
 // SIGNUP, LOGIN and LOGOUT ROUTES
 // ===============================
 
-//Login Routes
-router.get('/login', usersController.getLogin);
-router.post('/login', usersController.postLogin);
 
 // Signup Routes
 router.get('/signup', usersController.getSignup);
 router.post('/signup', usersController.postSignup);
 
-// Secret Route
-router.get('/secret', authenticatedUser, usersController.secret);
+//Login Routes
+router.get('/login', usersController.getLogin);
+router.post('/login', usersController.postLogin);
 
 // Logout Route
 router.get('/logout', usersController.getLogout);
+
+// Secret Route
+router.get('/secret', authenticatedUser, usersController.secret);
 
 // ===============================
 // SHOWS ROUTES =================

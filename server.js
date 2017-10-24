@@ -50,7 +50,7 @@ app.use(session({ secret: 'SHOW-THEORIES' })); // session secret
 app.use(passport.initialize()); // initializes passport module
 app.use(passport.session()); // used for persistent login sessions
 
-// I have no idea what this is.  Do not think I need it, but am keeping it for now.
+// I have no idea what this is....  Do not think I need it, but am keeping it for now.
 app.use(morgan('dev')); 
 
 

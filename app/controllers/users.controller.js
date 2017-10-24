@@ -36,12 +36,12 @@ function postLogin(request, response, next) {
 // GET / logout
 function getLogout(request, response, next) {
 	request.logout();
-	response.redirect('/login');
+	response.redirect('/');
 }
 
 // Restricted page
 function secret(request, response, next) {
-	response.json("This is my secret page");
+	response.json({secret: "This is my secret page"});
 }
 
 module.exports = {
