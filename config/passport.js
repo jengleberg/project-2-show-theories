@@ -45,9 +45,9 @@ passport.use('local-signup', new LocalStrategy({
 	newUser.save(function(err) {
 	  	if (err) throw err;
 	  	return callback(null, newUser);
-	});
+		});
     }
-    });
+   });
 }));
 
 // Local Login
