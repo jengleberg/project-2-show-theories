@@ -2,7 +2,7 @@
 
 Show Theories is a site that pulls in Popular TV shows from an API and also allows the user to search for shows from the API.  Users can see the show details and add "theories" to their favorite shows to share with friends and other users.  
 
-This project is my first Full Stack App!  This was a very challenging, yet rewarding project and I increased my knowledge significantly.
+This project is my first Full Stack App! 
 
 ## Approach Taken
 
@@ -39,6 +39,11 @@ I then created a set of [User Stories](https://trello.com/b/BFp5ozy8/project-2-s
 - Added app.js file to get the theories from the API
 - Setup EJS template for the shows and single show
 - Combined referenced Theories with Show id to track theories per show (Work in Progress)
+
+## Pending Issues
+
+- My Passport Authentication is working, but upon logging in the login icon does not change to show as logout.  
+- I still need to reference the theories to indiviual shows. Also need to reference with the user who created the theory.
 
 ## Getting Started
 
@@ -92,8 +97,7 @@ describe("Theory", function() {
 * [Mongoose](https://www.npmjs.com/package/mongoose)
 * Javascript
 * JQUERY
-* [axios](https://www.npmjs.com/package/axios)
- - Note:  axios is an npm package that can be used to make http requests from node.js.  I saw one of my squad members using it and  decided to give it a try.  It was easy to use and has some nice benefits including automatic transforming for JSON data. I am not too sure how this package compares to other similar packages at this point and will attempt to refactor and compare.  
+* [axios](https://www.npmjs.com/package/axios)   Note:  axios is an npm package that can be used to make http requests from node.js.  I learned about this via a you-tube tutorial I watched and decided to give it a try.  It was easy to use and has some nice benefits including automatic transforming for JSON data. I am not too sure how this package compares to other similar packages at this point and will attempt to refactor and compare.  
 
  
 
