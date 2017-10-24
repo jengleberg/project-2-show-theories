@@ -7,11 +7,19 @@ describe("Theory", function() {
  describe("new", function() {
   it("initializes a new theory", function() {
       var theoryish = new Theory();
+        expect(typeof(theoryish)).to.equal("object");
+ describe ("new", function() {
+  it ('should check obect for properties', function(){
+  	  var theoryish = new Theory();
+  	  expect(theoryish).to.have.property('title');
+  });
+  });
+});
 
     });
 });
        
-    });
+
 
 
    

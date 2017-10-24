@@ -18,19 +18,7 @@ module.exports = {
 	seedTheories: seedTheories,
 	};
 
-// Loads popular shows into shows page. This is called via the app.js
-	function popularShows(req, res, next) {
-  		res.render('pages/shows');
-	}
 
-// Single show page.  Used axios to call the api and return the single show.  
-	function getShow(req, res, next) {
-  		let showId = req.query;
-  		axios.get('https://api.themoviedb.org/3/tv/' + showId.id + '?api_key=6c9ee9c307b42ea4d152062ce4a5e1eb&language=en-US')
-  		.then((response) => { 
-  		res.render('pages/single', {response});
-  	});
- 	}
 
 //show all theories
 	function showTheories(req, res) {
@@ -148,3 +136,17 @@ module.exports = {
 // seeded
 		res.send('Database seeded!');
 	}
+
+// Loads popular shows into shows page. This is called via the app.js
+	function popularShows(req, res, next) {
+  		res.render('pages/shows');
+	}
+
+// Single show page.  Used axios to call the api and return the single show.  
+	function getShow(req, res, next) {
+  		let showId = req.query;
+  		axios.get('https://api.themoviedb.org/3/tv/' + showId.id + '?api_key=6c9ee9c307b42ea4d152062ce4a5e1eb&language=en-US')
+  		.then((response) => { 
+  		res.render('pages/single', {response});
+  	});
+ 	}

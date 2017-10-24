@@ -14,7 +14,7 @@ I started the project by creating wireframes of my vision for the site:
 
 ### User Stories
 
-I then created a set of [User Stories](https://trello.com/b/BFp5ozy8/project-2-show-theories) stories for the app experience.  They include what needs to be included in the app in order for it to function and meet the project requirements.
+I then created a set of [User Stories](https://trello.com/b/BFp5ozy8/project-2-show-theories) stories for the app experience.  They track what needs to be included in the app in order for it to function and meet the project requirements.
 
 
 

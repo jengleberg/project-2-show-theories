@@ -1,6 +1,8 @@
 // Document ready
 $(function () {
 
+// Setting variables:
+
 let url = 'https://api.themoviedb.org/3/discover/tv?api_key=6c9ee9c307b42ea4d152062ce4a5e1eb&language=en-US&sort_by=popularity.desc';
 let searchurl = 'https://api.themoviedb.org/3/search/tv?api_key=6c9ee9c307b42ea4d152062ce4a5e1eb&language=en-US&query=';
 let showPoster = "https://image.tmdb.org/t/p/w370_and_h556_bestv2";
@@ -13,7 +15,7 @@ let showPoster = "https://image.tmdb.org/t/p/w370_and_h556_bestv2";
       let showId = showList[i].id; // grabbing the ID from the showList
           if (showList[i].poster_path !==null) { // checking to see if the show has an image and if not do not use
             $('.showsAlbum').append( // appending the shows.ejs table with the images
-              ('<a href="/single?id=' + showId + '">'+'<img src="' + showPoster + showList[i].poster_path + '">' + '</a>'));
+              ('<a href="/single?id='+showId+'">'+'<img src="'+showPoster+showList[i].poster_path +'">'+'</a>'));
             }
             $("img").addClass('col-md-3').attr('id', 'showFrames');}
             });
@@ -33,7 +35,7 @@ let showPoster = "https://image.tmdb.org/t/p/w370_and_h556_bestv2";
         let showId = showList[i].id;
         if (showList[i].poster_path !==null) {
             $('.showsAlbum').append(
-              ('<a href="/single?id=' + showId + '">'+'<img src="' + showPoster + showList[i].poster_path + '">' + '</a>'));
+              ('<a href="/single?id='+showId+'">'+'<img src="'+showPoster+showList[i].poster_path+'">'+'</a>'));
           }
             $("img").addClass('col-md-3').attr('id', 'showFrames');}
           });
@@ -49,10 +51,12 @@ function goBack() {
     window.history.back();
 }
 
-function createTheory() {
-var baseUrl = (window.location).href; // You can also use document.URL
-var koopId = baseUrl.substring(baseUrl.lastIndexOf('=') + 1);
-alert(koopId);
-}
+// In Progress
+//function createTheory() {
+//var baseUrl = (window.location).href; // You can also use document.URL
+//var koopId = baseUrl.substring(baseUrl.lastIndexOf('=') + 1);
+
+//alert(koopId);
+//}
 
 
