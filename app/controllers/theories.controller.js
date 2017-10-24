@@ -1,9 +1,9 @@
 //requiring our theoryModel and giving it a constant to use in the controller functions below
 const Theory = 	require('../models/theory');
+const apiKey = require("../env");
 
-// Played around with both and used axios for the api call.
+// require axios (Used for show api call.)  See read.me file for details on axios
 const axios = 	require('axios');
-const request = require('request');
 
 //exporting our controller functions to be used in routes.js
 module.exports = {
@@ -27,7 +27,7 @@ module.exports = {
 	function getShow(req, res, next) {
   		let showId = req.query;
   		axios.get('https://api.themoviedb.org/3/tv/' + showId.id + '?api_key=6c9ee9c307b42ea4d152062ce4a5e1eb&language=en-US')
-  		.then(function(response) {  
+  		.then((response) => { 
   		res.render('pages/single', {response});
   	});
  	}

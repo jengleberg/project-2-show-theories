@@ -91,6 +91,8 @@ describe("Theory", function() {
 * [Mongoose](https://www.npmjs.com/package/mongoose)
 * Javascript
 * JQUERY
+* [axios](https://www.npmjs.com/package/axios)
+ - Note:  axios is an npm package that can be used to make http requests from node.js.  I saw one of my squad members using it and  decided to give it a try.  It was easy to use and has some nice benefits including automatic transforming for JSON data. I am not too sure how this package compares to other similar packages at this point and will attempt to refactor and compare.  
 
  
 
